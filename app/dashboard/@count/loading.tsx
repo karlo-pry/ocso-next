@@ -1,3 +1,5 @@
+import { Spinner } from "@nextui-org/react";
+
 export default function LoadingCount() {
-  return "Cargando tiendas";
+  return <Spinner color="warning"/>
 }

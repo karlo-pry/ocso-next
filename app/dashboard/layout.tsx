@@ -8,7 +8,7 @@ export default function LayoutDashboard({
   count: React.ReactNode;
 }>) {
   return (
-    <div className="bg-orange-50">
+    <div className="bg-gradient-to-b from-orange-50 to-red-100">
       <Header />
       <div className="flex flex-row items-center">
         <Sidebar />
