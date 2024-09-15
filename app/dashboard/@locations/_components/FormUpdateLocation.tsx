@@ -36,7 +36,7 @@ export default async function FormNewLocation({store}: {store: string | string[]
       <Input defaultValue={foundLocation?.locationName} label="Nombre" placeholder="Ocso Jurikiya" name="locationName" />
       <Input defaultValue={foundLocation?.locationAddress} label="Dirección" placeholder="Av De La Luz S/N" name="locationAddress" />
       <Input defaultValue={foundLocation?.locationLatLng[0].toString()} label="Latitud" placeholder="-120" name="locationLat" />
-      <Input defaultValue={foundLocation?.locationName[1].toString()} label="Longitud" placeholder="20" name="locationLng" />
+      <Input defaultValue={foundLocation?.locationLatLng[1].toString()} label="Longitud" placeholder="20" name="locationLng" />
       <SelectManager defaultManager={foundManager?.managerId} managers={dataManagers} locations={dataLocations} />
       <Button type="submit" color="primary"> Subir </Button>
     </form>
