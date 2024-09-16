@@ -1,5 +1,3 @@
-import axios from "axios";
-import { cookies } from "next/headers";
 import { Location } from "@/entities";
 import { API_URL, TOKEN_NAME } from "@/constants";
 import SelectLocation from "./_components/SelectLocation";
