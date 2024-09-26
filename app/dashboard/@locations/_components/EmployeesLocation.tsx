@@ -2,6 +2,7 @@ import { Employee } from "@/entities";
 import { API_URL } from "@/constants";
 import { Card, CardBody, CardHeader, Divider } from "@nextui-org/react";
 import { authHeaders } from "@/helpers/authHeaders";
+import Link from "next/link";
 
 export default async function EmployeesLocation({ store }: { store: string | string[] | undefined }) {
   if (!store) return "No hay empleados";
@@ -18,6 +19,7 @@ export default async function EmployeesLocation({ store }: { store: string | str
   return data?.map((employee: Employee) => {
     const fullName = employee.employeeName + " " + employee.employeeLastName
       return (
+      <Link href={{pathname: `/dashboard/employees/${employee.employeeId}`}}>
       <Card className="mx-10 my-10">
         <CardHeader>
           <p className="w-full">Nombre: <b>{fullName}</b></p>
@@ -27,7 +29,9 @@ export default async function EmployeesLocation({ store }: { store: string | str
             <p className="w-full">Email: <b>{employee.employeeEmail}</b></p>
             <p className="w-full">Teléfono: <b>{employee.employeePhoneNumber}</b></p>
         </CardBody>
-      </Card>)
+      </Card>
+      </Link>
+      )
   });
 
 }
